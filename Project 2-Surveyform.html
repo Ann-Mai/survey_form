@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Survey Form</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #7ed6df;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: whitesmoke;
+            margin: 0;
+        }
+        /* mobile friendly alternative to using background-attachment: fixed */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background: var(--color-darkblue);
+            background-image:
+            url(https://wallpapercave.com/wp/wp7620317.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        h1 {
+            margin-bottom: 0;
+        }
+        h1 + p {
+            margin-top: 0;
+        }
+        form {
+            background-color: #ffff;
+            box-shadow: 2px 5px 5px rgba(0, 0, 0, 4);
+            border-radius: 2px;
+            padding: 30px 20px;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        .form-control {
+            margin-bottom: 20px;
+            text-align: left;
+            color: black;
+        }
+        .form-control label {
+            display: block;
+            margin-bottom: 5px;
+
+        }
+        .form-control input, .form-control select, .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            margin-bottom: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 100%;
+        }
+        .form-control input[type="radio"], .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+        button {
+            background-color: beige;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 16px;
+            display: block;
+            padding: 10px;
+            width: 100%;
+        }
+
+    </style>
+    <body>
+        <script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+        <h1 id="title">Tropical Travel Agent Survey Form</h1>
+        <p id="description"><i>
+            All your feedback would help us improve our services.<br>
+            Your responses will be completely confidential. Thank you so much! 
+        </i></p>
+        <form id="survey-form">
+            <div class="form-control">
+                <label for="name" id="name-label">Name</label> 
+                <input type="text" name="Enter your name..." id="name" required placeholder="Your name"/>
+            </div>
+            <div class="form-control">
+                <label for="email" id="email-label">Email</label>
+                <input  type="email" name="Enter your email..." id="email" required placeholder="Your email"></input>
+            </div>
+            <div class="form-control">
+                <label for="age" id="age-label">Age</label>
+                <input type="text" name="Age..." id="age" required placeholder="Your age"></input>
+            </div>
+            <div class="form-control">
+                <label for="number" id="number-label">Number</label>
+                <input type="number" name="Number..." id="number" min="0" max="99" required placeholder="#"></input>
+            </div>
+            <div class="form-control">
+                <label for="destination">Where is your favorite destination?</label>
+                    <select name="destination" id="dropdown">
+                    <option value="other">Please choose your destination</option>
+                    <option value="mal">Maldives</option>
+                    <option value="thai">Thailand</option>
+                    <option value="jap">Japan</option>
+                    <option value="sing">Singapre</option>
+                    </select>
+            </div>             
+            <div class="form-control">
+            <label>How important is the choice of hotels when choosing a vacation destination?</label>
+                <label for="extremely-important"><input type="radio" id="extremely-important" name="rating" value="extremely-important"/>Extremely important</label>
+                <label for="very-important"><input type="radio" id="very-important" name="rating" value="very-important"/>Very important</label>
+                <label for="moderately-important"><input type="radio" id="moderately-important" name="rating" value="moderately-important"/>Moderately important</label>
+                <label for="notatall-important"><input type="radio" id="notatall-important" name="rating" value="notatall-important"/>Not at all important</label>
+            </div>                
+            <div class="form-control">
+            <label>How important is the choice of possible activities when choosing a vacation destination?</label>
+                <label for="extremely-important"><input type="radio" id="extremely-important" name="rating" value="extremely-important" />Extremely important</label>
+                <label for="very-important"><input type="radio" id="very-important" name="rating" value="very-important"/>Very important</label>
+                <label for="moderately-important"><input type="radio" id="moderately-important" name="rating" value="moderately-important"/>Moderately important</label>
+                <label for="notatall-important"><input type="radio" id="notatall-important" name="rating" value="notatall-important"/>Not at all important</label>    
+            </div>            
+            <div class="form-control">
+            <label>Your favorite transportation</label>
+                <label for="airplane" class="form-check-label"><input type="checkbox" class="form-check-input" value="Airplane"/>Airplane</label>
+                <label for="train" class="form-check-label"><input type="checkbox" class="form-check-input" value="Train"/>Train</label>
+                <label for="car" class="form-check-label"><input type="checkbox" class="form-check-input" value="Car"/>Car</label>
+                <label for="boat" class="form-check-label"><input type="checkbox" class="form-check-input" value="Boat"/>Boat</label>
+              </div>        
+            <div class="form-control">
+            <label for="additional-comment"> Additional Comment <textarea placeholder="Additional Comment"></textarea></label>
+            </div>
+                <br>
+                <button type="submit" id="submit">Submit</button>
+        </form>
+
+    </body>
+    
+
+    <script>
+
+    </script>
+</html>
